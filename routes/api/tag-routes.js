@@ -27,6 +27,33 @@ router.get('/', async (req, res) => {
   }
 })
 
+// find a single tag by its `id`
+// be sure to include its associated Product data
+router.get('/:id', async (req, res) => {
+  try {
+    const dbReturnData = await Tag.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: ['id', 'tag_name'],
+      include: [{
+        model: Product,
+        attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
+      }]
+    })
+
+    // Check if data exists, if not return status 404
+    if (!dbReturnData) {
+      return res.status(404).json({ message: 'No tags found' })
+    }
+
+    res.status(200).json(dbReturnData)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json({ message: 'An error occurred retrieving all tags.', error: err.toString() })
+  }
+})
+
 router.post('/', async (req, res) => {
   // create a new tag
   try {
