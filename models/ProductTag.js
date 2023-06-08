@@ -19,7 +19,8 @@ ProductTag.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'product',
-        key: 'id'
+        key: 'id',
+        unique: false
       }
     },
     // tag id, references tag model's id
@@ -27,13 +28,14 @@ ProductTag.init(
       type: DataTypes.INTEGER,
       references: {
         model: 'tag',
-        key: 'id'
+        key: 'id',
+        unique: false
       }
     }
   },
   {
     hooks: {
-      // beforeCreate lifecycle "hook" functionality
+      // left in for reference/future use (hooks don't do anything here)
       beforeCreate: async (newProductTagData) => {
         return newProductTagData
       },

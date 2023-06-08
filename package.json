@@ -1,28 +1,36 @@
 {
-  "name": "module-13-challenge-orm",
+  "name": "etrade-engine",
   "version": "1.0.0",
-  "description": "",
+  "description": "E-Commerce Back End using express.js and MySQL",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/index.js",
+    "show-schema": "node demo/demo.js",
+    "create-db": "node db/create-db.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ReneMalingre/Etrade-Engine"
+    "url": "git+https://github.com/ReneMalingre/Etrade-Engine.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Rene Malingre",
   "license": "MIT",
   "devDependencies": {
     "nodemon": "^2.0.3"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "inquirer": "^8.2.4",
     "mysql2": "^2.1.0",
-    "sequelize": "^6.32.0"
-  }
+    "sequelize": "^5.21.7"
+  },
+  "bugs": {
+    "url": "https://github.com/ReneMalingre/Etrade-Engine/issues"
+  },
+  "homepage": "https://github.com/ReneMalingre/Etrade-Engine#readme"
 }

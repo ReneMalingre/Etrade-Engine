@@ -22,6 +22,7 @@ Tag.init(
   },
   {
     hooks: {
+      // left in for reference/future use (hooks don't do anything here)
       // beforeCreate lifecycle "hook" functionality
       beforeCreate: async (newTagData) => {
         return newTagData

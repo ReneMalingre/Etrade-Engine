@@ -133,7 +133,7 @@ router.put('/:id', async (req, res) => {
           }
         })
       console.log('New Product TagID Array: ' + newProductTags)
-      
+
       // figure out which ones to remove
       const productTagsToRemove = productTags
         .filter(({ tag_id }) => !req.body.tagIds.includes(tag_id))
@@ -141,7 +141,9 @@ router.put('/:id', async (req, res) => {
 
       // run both actions
       await Promise.all([
+        // destroy the product tags links (many to many intermediate table) that are no longer used
         ProductTag.destroy({ where: { id: productTagsToRemove } }),
+        // create the new product tags links (many to many intermediate table)
         ProductTag.bulkCreate(newProductTags)
       ])
     }
