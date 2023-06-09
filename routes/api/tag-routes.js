@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Tag, Product, ProductTag } = require('../../models')
+const { Tag, Product } = require('../../models')
 
 // The `/api/tags` endpoint
 
@@ -93,7 +93,7 @@ router.put('/:id', async (req, res) => {
     if (!dbReturnData || dbReturnData[0] === 0) {
       return res.status(404).json({ message: `No tag found with this id: ${req.params.id}` })
     }
-    res.status(200).json({ message: 'Tag updated successfully.' })
+    res.status(200).json({ message: `Tag updated successfully to ${req.body.tag_name}.` })
   } catch (err) {
     console.log(err)
     res.status(500).json({ message: 'An error occurred updating a tag', error: err.toString() })

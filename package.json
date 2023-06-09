@@ -8,7 +8,7 @@
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/index.js",
-    "show-schema": "node demo/demo.js",
+    "show-schema": "node demo/show-schema.js",
     "create-db": "node db/create-db.js"
   },
   "repository": {

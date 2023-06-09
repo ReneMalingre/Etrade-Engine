@@ -98,7 +98,7 @@ router.put('/:id', async (req, res) => {
     if (!dbReturnData || dbReturnData[0] === 0) {
       return res.status(404).json({ message: `No category found with this id: ${req.params.id}` })
     }
-    res.status(200).json({ message: 'Category updated successfully.' })
+    res.status(200).json({ message: `Category updated successfully to ${req.body.category_name}.` })
   } catch (err) {
     console.log(err)
     res.status(500).json({ message: 'An error occurred', error: err.toString() })

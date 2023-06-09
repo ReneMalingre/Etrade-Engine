@@ -1,6 +1,12 @@
-// create database ecommerce_db;
+// This module is an alternative to using the MySQL command line interface 
+// to create/recreate the database
+// creates database ecommerce_db via "npm run create-db"
+
+// database engine
 const mysql = require('mysql2')
+// environment variables
 require('dotenv').config()
+// chalk for colorful console.log
 const chalk = require('chalk')
 
 console.log(chalk.blue('Creating the ecommerce_db database...\n'))
@@ -16,7 +22,7 @@ async function createECommerceDB () {
 
   // Connect to the MySQL engine and create the database
   if (connection) {
-    console.log('Connected!')
+    console.log('Connected to MySQL engine, ready to create the database.')
     createDBs()
   } else {
     console.log('Error connecting to the database')
