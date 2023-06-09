@@ -6,7 +6,7 @@ An e-commerce back-end using node.js, express.js and sequelize with a MySQL data
 
 ## Description
 
-This is server application that runs an products inventory back-end. It allows the user to view, add, update and delete products, categories and tags. Categories and tags can be associated with products. The application uses the express.js framework in a node.js environment, and a MySQL database using Sequelize.
+This is server application that runs an ecommerce products back-end. It allows the user to view, add, update and delete products, categories and tags. Categories and tags can be associated with multiple products, and products can have multiple tags. The application uses the express.js framework in a node.js environment, and a MySQL database using Sequelize.
 
 ## Table of Contents
 
@@ -38,7 +38,7 @@ Fork or copy the repository to your own machine. To install the necessary depend
 npm i
 ```
 
-You must have MySQL installed on your machine or have access to a remote MySQL install.  Create a .env file in the root directory of the application.  If you are running MySQL locally, add the following lines to the .env file, replacing the values with your own:
+You must have MySQL installed on your machine or have access to a remote MySQL install.  Create a .env file in the root directory of the application.  Add the following lines to the .env file, replacing the values with your own, and other values as required for your MySQL installation:
 
 ```bash
 DB_USER='your MySQL username'
@@ -70,7 +70,7 @@ npm run create-db
 
 ### Seeding the database
 
-To seed the database, run the following command in the terminal from the root directory of the application:
+To create the tables and relationships and to seed the database, run the following command in the terminal from the root directory of the application:
 
 ```bash
 npm run seed
